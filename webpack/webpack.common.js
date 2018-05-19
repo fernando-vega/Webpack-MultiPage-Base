@@ -6,7 +6,7 @@ module.exports = {
   entry: './assets/javascript/entry.js',
   output: {
     publicPath: '/',
-    path: path.join(__dirname, '..'),
+    path: path.join(__dirname, '../public/'),
     filename: 'dist/javascript/bundle.js',
   },
   /* plugins: [
