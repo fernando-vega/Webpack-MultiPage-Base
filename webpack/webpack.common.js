@@ -2,11 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
-const htmlWebpack = new HtmlWebpackPlugin({
-  template: './assets/index.template.html',
-  filename: 'index.html'
-});
-
 module.exports = {
   entry: './assets/javascript/entry.js',
   output: {
@@ -18,8 +13,7 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jquery: 'jquery'
-    }),
-    htmlWebpack
+    })
   ], */
   module: {
     rules: [{
@@ -35,5 +29,15 @@ module.exports = {
         loader: 'url-loader'
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './assets/index.template.html',
+      filename: 'index.html'
+    }),
+    new HtmlWebpackPlugin({ // Also generate a home.html
+      template: './assets/home.template.html',
+      filename: 'home.html'
+    })
+  ]
 }
