@@ -1,4 +1,4 @@
-# Webpack-Page-Base
+# Webpack-MultiPage-Base
 
 ## This is the basic structure for the initial project using:
 
